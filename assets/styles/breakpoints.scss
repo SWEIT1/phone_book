@@ -1,0 +1,35 @@
+$breakpoint-desktop-wide: 1600px;
+$breakpoint-desktop-medium: 1230px;
+$breakpoint-desktop: 1150px;
+$breakpoint-tablet-wide: 1050px;
+$breakpoint-tablet-medium: 900px;
+$breakpoint-tablet: 778px;
+$breakpoint-mobile-wide: 599px;
+$breakpoint-mobile-medium: 464px;
+$breakpoint-mobile: 320px;
+
+@mixin use-breakpoint ($type, $breakpoint) {
+  @if $breakpoint == 'desktop-wide' { $breakpoint: $breakpoint-desktop-wide }
+  @if $breakpoint == 'desktop-medium' { $breakpoint: $breakpoint-desktop-medium }
+  @if $breakpoint == 'desktop' { $breakpoint: $breakpoint-desktop }
+  @if $breakpoint == 'tablet-wide' { $breakpoint: $breakpoint-tablet-wide}
+  @if $breakpoint == 'tablet-medium' { $breakpoint: $breakpoint-tablet-medium }
+  @if $breakpoint == 'tablet' { $breakpoint: $breakpoint-tablet }
+  @if $breakpoint == 'mobile-wide' { $breakpoint: $breakpoint-mobile-wide }
+  @if $breakpoint == 'mobile-medium' { $breakpoint: $breakpoint-mobile-medium }
+  @if $breakpoint == 'mobile' { $breakpoint: $breakpoint-mobile }
+
+  @if ($type == 'max') { $breakpoint: $breakpoint }
+
+  @media (#{ $type }-width: #{ $breakpoint + 1px }) {
+    @content;
+  }
+}
+
+@mixin is-less-than ($breakpoint) {
+  @include use-breakpoint ('max', $breakpoint) { @content }
+}
+
+@mixin is-greater-or-equals-than ($breakpoint) {
+  @include use-breakpoint ('min', $breakpoint) { @content }
+}

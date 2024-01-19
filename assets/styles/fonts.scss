@@ -1,0 +1,9 @@
+@import '../fonts/OpenSans/mixin.scss';
+
+@include open-sans-regular;
+@include open-sans-light;
+@include open-sans-semi-bold;
+@include open-sans-bold;
+@include open-sans-extra-bold;
+@include open-sans-semi-bold-italic;
+@include open-sans-light-italic;
