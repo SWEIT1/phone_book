@@ -6,7 +6,7 @@
     <div class="Header__navigation">
       <nuxt-link to="/">About</nuxt-link>
       <nuxt-link to="/">Contacts</nuxt-link>
-      <nuxt-link to="/">Ne xuinya</nuxt-link>
+      <nuxt-link to="/">Ne2xuinya</nuxt-link>
     </div>
   </div>
 </template>
