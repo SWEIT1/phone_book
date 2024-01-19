@@ -1,7 +1,7 @@
 <template>
   <div class="Header">
     <div class="Header__logo">
-      <h1>Finance Manager</h1>
+      <h1>Phone book</h1>
     </div>
     <div class="Header__navigation">
       <nuxt-link to="/">About</nuxt-link>
